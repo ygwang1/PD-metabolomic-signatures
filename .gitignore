@@ -1,0 +1,29 @@
+# Data files: only track example data and metadata lists
+*.csv
+!data/metabolite_list.csv
+!data/selected_metabolites.csv
+!data/example_data.csv
+
+!data/example_et_data.csv
+
+# Generated outputs
+*.pdf
+*.pkl
+*.png
+*.tiff
+*.svg
+saved_models/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS
+.DS_Store
