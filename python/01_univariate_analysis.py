@@ -105,8 +105,8 @@ def calculate_fold_change(data, group_col, metabolite_list,
     alpha_upper = 1 - alpha_lower
 
     for metabolite in metabolite_list:
-        group1_data = data.loc[data[group_col] == 1, metabolite].dropna()  #missing values ​​have already been handled, so there are no NAs.
-        group2_data = data.loc[data[group_col] == 0, metabolite].dropna()  #adjust based on the actual code
+        group1_data = data.loc[data[group_col] == 1, metabolite].dropna()  #missing values ​​have already been handled
+        group2_data = data.loc[data[group_col] == 0, metabolite].dropna()
 
         if len(group1_data) == 0 or len(group2_data) == 0:
             results.append({
