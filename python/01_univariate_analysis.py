@@ -65,7 +65,7 @@ main_data_log10_z_c2[all_met] = scaler.fit_transform(
 )
 
 # Encode binary variables
-for df in [main_data_log10_z_c1, main_data_log10_z_c2]:
+for df in [main_data_c1, main_data_c2, main_data_log10_z_c1, main_data_log10_z_c2]:
     df["diagnosis"] = df["diagnosis"].map({"NC": 0, "PD": 1})
     df["sex"] = df["sex"].map({"female": 0, "male": 1})
 
@@ -105,8 +105,8 @@ def calculate_fold_change(data, group_col, metabolite_list,
     alpha_upper = 1 - alpha_lower
 
     for metabolite in metabolite_list:
-        group1_data = data.loc[data[group_col] == 1, metabolite].dropna()
-        group2_data = data.loc[data[group_col] == 0, metabolite].dropna()
+        group1_data = data.loc[data[group_col] == 1, metabolite].dropna()  #missing values ​​have already been handled, so there are no NAs.
+        group2_data = data.loc[data[group_col] == 0, metabolite].dropna()  #adjust based on the actual code
 
         if len(group1_data) == 0 or len(group2_data) == 0:
             results.append({
