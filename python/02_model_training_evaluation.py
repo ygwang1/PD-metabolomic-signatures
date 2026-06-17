@@ -641,4 +641,85 @@ single_summary.to_csv("single_metabolite_performance.csv", index=False)
 print("\nSingle-metabolite performance summary saved.")
 print(single_summary)
 
+# =============================================================================
+# 10. Radar chart: model performance by drug-naïve vs medicated subgroups
+# =============================================================================
+from math import pi
+
+perf = pd.read_csv("performance.txt", sep="\t")
+
+groups = ["Test set-drug-naïve", "Test set-medicated"]
+metrics = ["AUC", "Accuracy", "Precision", "Recall", "F1-score"]
+
+colors = {
+    "Logistic Regression": "#8C6BB1",
+    "Support Vector Machine": "#FB8072",
+    "eXtreme Gradient Boosting": "#80B1D3",
+}
+linestyles = {
+    "Logistic Regression": "-",
+    "Support Vector Machine": "--",
+    "eXtreme Gradient Boosting": "-.",
+}
+markers = {
+    "Logistic Regression": "o",
+    "Support Vector Machine": "s",
+    "eXtreme Gradient Boosting": "^",
+}
+
+angles = np.linspace(0, 2 * np.pi, len(metrics), endpoint=False).tolist()
+angles += angles[:1]  # Close the polygon
+
+fig, axes = plt.subplots(
+    1, 2, figsize=(14, 7),
+    subplot_kw=dict(polar=True),
+    gridspec_kw={"wspace": 0.35},
+)
+
+for ax, group in zip(axes, groups):
+    group_data = perf[perf["Metabolite"] == group]
+
+    for _, row in group_data.iterrows():
+        model = row["Model"]
+        values = row[metrics].values.tolist()
+        values += values[:1]
+        ax.plot(
+            angles, values,
+            color=colors[model],
+            linestyle=linestyles[model],
+            marker=markers[model],
+            markersize=5,
+            linewidth=2,
+            alpha=1,
+            label=model,
+        )
+        ax.fill(angles, values, alpha=0.06, color=colors[model])
+
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(metrics, fontsize=12)
+    ax.tick_params(axis="x", pad=10)
+    ax.set_ylim(0.5, 1.0)
+    ax.set_yticks([0.7, 0.8, 0.9, 1.0])
+    ax.set_yticklabels(["0.7", "0.8", "0.9", "1.0"], fontsize=10)
+    ax.set_title(group, fontsize=13, pad=15, weight="semibold")
+    ax.grid(True, linestyle="--", linewidth=0.8, alpha=0.5)
+    ax.spines["polar"].set_color("#cccccc")
+
+# Unified legend
+handles, labels = axes[0].get_legend_handles_labels()
+unique = dict(zip(labels, handles))
+fig.legend(
+    unique.values(), unique.keys(),
+    title="Model",
+    loc="center right",
+    bbox_to_anchor=(0.6, 0.8),
+    fontsize=10,
+    title_fontsize=11,
+    frameon=False,
+)
+
+fig.savefig("fig_model_performance_radar.pdf", dpi=300)
+plt.show()
+print("\nRadar chart saved.")
+
 print("\nModel training and evaluation complete.")
