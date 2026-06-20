@@ -70,14 +70,14 @@ Quinolinic acid
 N-Acetylisoleucine
 N-Acetylornithine
 L-Arginine
-N(6),N(6)-Dimethyllysine
+"N(6),N(6)-Dimethyllysine"
 Citrulline
 N-(3-acetamidopropyl)pyrrolidin-2-one
 N1-Acetylspermidine + N8-Acetylspermidine
 N-Acetylglutamine
 N6-Acetyl-L-lysine
 Homoarginine
-N6,N6,N6-Trimethyl-L-lysine
+"N6,N6,N6-Trimethyl-L-lysine"
 5-Hydroxyindoleacetic acid
 ADMA + SDMA
 Indolelactic acid
@@ -130,7 +130,7 @@ Glycodeoxycholate-3-sulfate
 Taurocholic acid
 3beta-Hydroxy-5-cholenoic acid glycine conjugate 3-O-sulfate
 3beta-Hydroxy-5-cholenoic acid taurine conjugate 3-O-sulfate
-3-Oxo-4,6-choladienoic acid
+"3-Oxo-4,6-choladienoic acid"
 3beta-Hydroxy-5-cholenoic acid
 Isoursodeoxycholic acid
 Ursodeoxycholic acid
@@ -155,7 +155,7 @@ Glycoursodeoxycholate-3-sulfate
 Glycochenodeoxycholate-3-sulfate
 Glycochenodeoxycholic acid 3-glucuronide
 Glycodeoxycholate 3-glucuronide
-1,5-Anhydrosorbitol
+"1,5-Anhydrosorbitol"
 Glucose + myo-Inositol
 N-Acetylglucosamine sulfate
 Cer(d32:0)-Cer(d16:0/16:0)
@@ -276,11 +276,11 @@ Eicosatrienoic acid (FFA(20:3n9))
 Eicosadienoic acid (FFA(20:2n6))
 13-Hydroperoxylinolenic acid
 Octadecendioic acid (FFA(18:1-DC))
-15,16-DiHODE
+"15,16-DiHODE"
 Palmitoylglycine
 Octadecanedioic acid (FFA(18:0-DC))
-12,13-DHOME
-9,10-DHOME
+"12,13-DHOME"
+"9,10-DHOME"
 15-HETE
 12-HETE
 11-HETE
@@ -301,7 +301,7 @@ Methyl beta-D-glucopyranoside
 Paraxanthine
 Thymol Sulfate
 Iodide
-2,6-Dihydroxybenzoic acid
+"2,6-Dihydroxybenzoic acid"
 Cinnamoylglycine
 Ethyl beta-D-glucopyranoside
 4-Allylphenol sulfate
@@ -527,7 +527,7 @@ LysoPI(20:4/0:0)
 LysoPI(20:3)
 Trimethylamine N-oxide
 Betaine
-N,N,N-trimethyl-5-aminovaleric acid
+"N,N,N-trimethyl-5-aminovaleric acid"
 Indoleacetic acid
 Hippuric acid
 Indole-3-propionic acid
@@ -550,7 +550,7 @@ alpha-Aminobutyric acid
 Fumaric acid
 Succinic acid
 2-Hydroxy-3-methylbutyric acid + 3-Hydroxy-3-methylbutyric acid
-3,4-Dihydroxybutyric acid
+"3,4-Dihydroxybutyric acid"
 3-Methyl-2-oxovaleric acid
 4-Methyl-2-oxovaleric acid
 Glutaric acid
@@ -582,7 +582,7 @@ gamma-Glu-Ala
 Ser-Leu
 Phe-Gly
 Pro-Hyp
-N,N,N-Trimethyl-alanyl-proline betaine
+"N,N,N-Trimethyl-alanyl-proline betaine"
 Ile-Pro
 Ile-Val
 Val-Ile + Leu-Val
@@ -604,7 +604,7 @@ gamma-Glu-Tyr
 Phe-Phe
 Glu-Trp
 Phe-Trp
-Human Fibrinopeptide A residual [2-16, DSGEGDFLAEGGGVR]
+"Human Fibrinopeptide A residual [2-16, DSGEGDFLAEGGGVR]"
 Gly-Val
 Leu-Ala
 Leu-Leu
@@ -620,8 +620,8 @@ Biliverdin
 Biliverdin isomer 3
 Bilirubin
 Hematoporphyrin
-(4E,15E)-Bilirubin IXa
-(4E,15Z)-Bilirubin IXa
+"(4E,15E)-Bilirubin IXa"
+"(4E,15Z)-Bilirubin IXa"
 Uracil
 Dihydrothymine
 Hypoxanthine
@@ -633,12 +633,12 @@ Uridine + Pseudouridine
 Adenosine
 1-Methyladenosine
 N6-Methyladenosine
-N2,N2-Dimethylguanosine
-1,7-Dimethyluric acid
+"N2,N2-Dimethylguanosine"
+"1,7-Dimethyluric acid"
 Uric acid
 Deoxyuridine
 Uridine
-5,6-Dihydrouridine
+"5,6-Dihydrouridine"
 5-Methyluridine
 2'-O-Methyluridine
 Sphingosine
@@ -652,10 +652,10 @@ SM(d44:1)-SM(d18:1/26:0)
 Cortisol
 Androstenediol disulfate isomer 1
 Androstenediol disulfate isomer 2
-5alpha-Androstan-3beta,17alpha-diol disulfate
+"5alpha-Androstan-3beta,17alpha-diol disulfate"
 Pregnanediol disulfate
-5alpha-Pregnan-3beta,20alpha-diol disulfate
-Pregnenolone-3,21-disulfate
+"5alpha-Pregnan-3beta,20alpha-diol disulfate"
+"Pregnenolone-3,21-disulfate"
 Corticosterone
 Dehydroepiandrosterone sulfate
 Testosterone sulfate isomer 1
