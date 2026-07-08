@@ -7,7 +7,6 @@
 rm(list = ls())
 
 # Set working directory to the location of input files
-# Users should adjust this path or set working directory before running
 # setwd("path/to/data")
 
 library(glmnet)
@@ -28,7 +27,7 @@ train_data <- read.csv("train_data.csv",
                        sep = ",", header = TRUE,
                        check.names = FALSE, na.strings = c("NA", "", "N/F"))
 
-# Load all QC-passed metabolites (n = 746)
+# Load all QC-passed metabolites
 metab_list <- read.csv("data/metabolite_list.csv")$metabolite
 
 # ============================================================================
@@ -182,7 +181,7 @@ write.csv(selection_df_metab, "lasso_stability_probabilities.csv", row.names = F
 write.csv(stable_metabs, "data/selected_metabolites.csv", row.names = FALSE)
 
 # ============================================================================
-# Figure 1: Stability selection probability bar plot (top 50)
+# Figure: Stability selection probability bar plot (top 50)
 # ============================================================================
 selection_df_metab <- selection_df_metab[order(-selection_df_metab$prob), ]
 selection_df_top50 <- selection_df_metab[1:min(50, nrow(selection_df_metab)), ]
@@ -214,7 +213,7 @@ ggsave("fig_stability_selection_probability.pdf", p_stability,
        width = 5, height = 8, device = "pdf")
 
 # ============================================================================
-# Figure 2: LASSO CV curve with non-zero metabolite count
+# Figure: LASSO CV curve with non-zero metabolite count
 # ============================================================================
 coef_all <- as.matrix(coef(cvfit, s = lambda_seq))[-1, , drop = FALSE]
 metab_idx <- which(rownames(coef_all) %in% metab_list)
@@ -280,7 +279,7 @@ p_cv <- ggplot(cv_plot_df, aes(x = log_lambda)) +
 ggsave("fig_lasso_cv_curve.pdf", p_cv, width = 5, height = 4, device = "pdf")
 
 # ============================================================================
-# Figure 3: LASSO coefficient path (highlighting stable metabolites)
+# Figure: LASSO coefficient path (highlighting stable metabolites)
 # ============================================================================
 final_metabs <- stable_metabs
 fit_path <- glmnet(
