@@ -53,7 +53,7 @@ cum_var <- cumsum(var_explained)
 k_80 <- which(cum_var >= 0.8)[1]
 k_90 <- which(cum_var >= 0.9)[1]
 
-# ---- Figure 1: Scree plot with cumulative variance ----
+# ---- Figure: Scree plot with cumulative variance ----
 df <- data.frame(
   PC = 1:length(var_explained),
   Variance = var_explained,
@@ -87,7 +87,7 @@ p_scree <- ggplot(df, aes(x = PC)) +
 
 ggsave("fig_pca_scree.pdf", plot = p_scree, width = 10, height = 6, device = "pdf")
 
-# ---- Figure 2: PCA score plot (PC1 vs PC2) ----
+# ---- Figure: PCA score plot ----
 pca_scores <- as.data.frame(pca_result$x)
 pca_scores$group <- sample_metadata$diagnosis
 variance_explained <- pca_result$sdev^2 / sum(pca_result$sdev^2) * 100
@@ -135,7 +135,7 @@ oplsda <- opls(
   crossvalI = 7
 )
 
-# ---- Figure 3: OPLS-DA score plot ----
+# ---- Figure: OPLS-DA score plot ----
 oplsda_scores <- as.data.frame(oplsda@scoreMN)
 o1 <- oplsda@orthoScoreMN[, 1]
 oplsda_scores$o1 <- o1
@@ -294,7 +294,7 @@ vip_results <- data.frame(
 
 write.csv(vip_results, "oplsda_vip_results.csv", row.names = FALSE)
 
-# ---- Figure 5: VIP heatmap for top metabolites ----
+# ---- Figure: VIP heatmap for top metabolites ----
 top_metabolites <- c(
   "12-HETE", "Adenosine", "Niacinamide", "Spermine",
   "Ile-Pro", "Spermidine", "3-Allylphenol sulfate",
