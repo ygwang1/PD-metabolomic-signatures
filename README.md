@@ -100,5 +100,6 @@ Raw data are not included in this repository due to patient privacy protections.
 
 ## Citation
 
-If you use this code, please cite the corresponding paper.
-Wang Y, Xiang Y, Huang X, et al. Metabolomic signatures for diagnosis and clinical severity in Parkinson's disease. EBioMedicine. Published online July 14, 2026. doi:10.1016/j.ebiom.2026.106383
+If you use this code, please cite:
+
+> Wang Y, Xiang Y, Huang X, et al. Metabolomic signatures for diagnosis and clinical severity in Parkinson's disease. *EBioMedicine*. Published online July 14, 2026. [doi:10.1016/j.ebiom.2026.106383](https://doi.org/10.1016/j.ebiom.2026.106383)
